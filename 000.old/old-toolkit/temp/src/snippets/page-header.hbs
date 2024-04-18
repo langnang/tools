@@ -1,0 +1,20 @@
+<div class="page-header">
+  <h2>
+    <a href="#/">
+      <i class="glyphicon glyphicon-arrow-left"></i>
+    </a>
+    {{name}}
+    {{#if description}}
+    <small>// {{description}}</small>
+    {{/if}}
+    {{#if btns}}
+    <div class="btn-group pull-right" name="btn_group">
+      {{#each btns as |btn|}}
+      <button type="button" class="btn btn-default">
+        <i class="{{btn.icon}}"></i>
+      </button>
+      {{/each}}
+    </div>
+    {{/if}}
+  </h2>
+</div>

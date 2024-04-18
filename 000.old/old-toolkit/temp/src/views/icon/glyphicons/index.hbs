@@ -1,0 +1,17 @@
+<div class="container">
+  {{>page-header}}
+  <div class="row">
+    {{#each icons}}
+      <div class="col-sm-3 col-md-2">
+        <div class="thumbnail text-center">
+          <h3 style="font-size: 36px;">
+            <i class="glyphicon glyphicon-{{this}}"></i>
+          </h3>
+          <div class="caption">
+            <p>{{this}}</p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
