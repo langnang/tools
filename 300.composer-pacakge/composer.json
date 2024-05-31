@@ -1,0 +1,15 @@
+{
+    "name": "admin/300.composer-pacakge",
+    "autoload": {
+        "psr-4": {
+            "Admin\\300ComposerPacakge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "langnang",
+            "email": "langnang.chen@outlook.com"
+        }
+    ],
+    "require": {}
+}
