@@ -1,0 +1,27 @@
+<style>
+  .monaco-editor, .overflow-guard {
+    /*height: unset !important;*/
+
+  }
+
+  .button-group {
+    /*display: none;*/
+    /*visibility: hidden;*/
+    opacity: 0;
+  }
+
+  .button-group:hover {
+    /*visibility: unset;*/
+    /*display: block;*/
+    opacity: 1;
+  }
+</style>
+<div id="static-dev-monaco-editor-wrapper" class="container">
+
+  {{> addGroup}}
+  <!--  <div id="monaco-container" style="height: 361px;"></div>-->
+  {{#each children as |script|}}
+    {{> editorContainer id=script.id languages=@root.languages }}
+    {{> addGroup}}
+  {{/each}}
+</div>

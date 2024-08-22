@@ -1,0 +1,32 @@
+<div class="container">
+  {{>page-header}}
+  <div>
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      {{#each icons}}
+        <li role="presentation" class="{{#unless @index}}active{{/unless}}">
+          <a href="#{{@key}}" aria-controls="{{@key}}" role="tab" data-toggle="tab">{{name}}</a>
+        </li>
+      {{/each}}
+    </ul>
+    <div class="tab-content" style="margin-top:10px;">
+      {{#each icons}}
+        <div role="tabpanel" class="tab-pane {{#unless @index}}active{{/unless}}" id="{{@key}}">
+          <div class="row">
+            {{#each this.icons}}
+              <div class="col-sm-3 col-md-2">
+                <div class="thumbnail text-center">
+                  <h3 style="font-size: 36px;">
+                    <i class="{{@../key}} fa-{{this}}"></i>
+                  </h3>
+                  <div class="caption">
+                    <p style="white-space: nowrap;">{{this}}</p>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

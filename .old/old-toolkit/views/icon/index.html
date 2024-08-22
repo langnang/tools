@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Icon | Langnang Toolkit</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <!-- <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" rel="stylesheet"> -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <style>
+    .thumbnail .caption {
+      padding: 9px 0;
+      font-size: 26px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <div class="row">
+      <h1 class="text-center">Icon</h1>
+      <div class="col-md-12" style="margin-bottom: 10px;">
+        <div v-for="(item,index) in packages" :key="index" class="btn-group" role="group" style="margin: 0 6px 6px 0;">
+          <a class="btn btn-info" target="_blank" :href="item.home" :disabled="!item.home">
+            {{item.name}} {{item.version}}
+          </a>
+          <a v-if="item.package" class="btn btn-info" target="_blank" :href="'https://www.npmjs.com/package/' + item.package" style="padding: 2px 4px;">
+            <img src="./../../assets/svg/npm.svg" alt="" style="height: 28px;">
+          </a>
+          <a v-if="item.repository" class="btn btn-info" target="_blank" :href="item.repository" style="padding: 2px 4px;">
+            <img v-if="item.repository.indexOf('https://github.com') === 0" src="./../../assets/svg/github.svg" alt="" style="height: 28px;">
+            <img v-else-if="item.repository.indexOf('https://gitlab.com') === 0" src="./../../assets/svg/gitlab.svg" alt="" style="height: 28px;">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#font-awesome-solid" aria-controls="font-awesome-solid" role="tab" data-toggle="tab">
+              Font Awesome Solid
+              <span class="badge">{{icons.fontawesome.default.length}}</span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#font-awesome-regular" aria-controls="font-awesome-regular" role="tab" data-toggle="tab">
+              Font Awesome Regular
+              <span class="badge">{{icons.fontawesome.default.length}}</span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#font-awesome-brands" aria-controls="font-awesome-brands" role="tab" data-toggle="tab">
+              Font Awesome Brands
+              <span class="badge">{{icons.fontawesome.brands.length}}</span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#glyphicon" aria-controls="glyphicon" role="tab" data-toggle="tab">
+              Bootstrap Glyphicons
+              <span class="badge">{{icons.glyphicon.length}}</span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#simple-icons" aria-controls="simple-icons" role="tab" data-toggle="tab">
+              Simple Icons
+              <span class="badge">{{icons.simpleicons.length}}</span>
+            </a>
+          </li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+        </ul>
+        <div class="tab-content" style="margin-top: 10px;">
+          <div role="tabpanel" class="tab-pane active" id="font-awesome-solid">
+            <div class="col-md-1 col-sm-2 col-xs-3" v-for="item in icons.fontawesome.default" :key="item">
+              <div class="thumbnail" :title="item">
+                <div class="caption text-center">
+                  <i class="fa-solid" :class="'fa-'+item"> </i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="font-awesome-regular">
+            <div class="col-md-1 col-sm-2 col-xs-3" v-for="item in icons.fontawesome.default" :key="item">
+              <div class="thumbnail" :title="item">
+                <div class="caption text-center">
+                  <i class="fa-regular" :class="'fa-'+item"> </i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="font-awesome-brands">
+            <div class="col-md-1 col-sm-2 col-xs-3" v-for="item in icons.fontawesome.brands" :key="item">
+              <div class="thumbnail" :title="item">
+                <div class="caption text-center">
+                  <i class="fa-brands" :class="'fa-'+item"> </i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="glyphicon">
+            <div class="col-md-1 col-sm-2 col-xs-3" v-for="item in icons.glyphicon" :key="item">
+              <div class="thumbnail" :title="item">
+                <div class="caption text-center">
+                  <i class="glyphicon" :class="'glyphicon-'+item"> </i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="simple-icons">
+            <div class="col-md-1 col-sm-2 col-xs-3" v-for="item in icons.simpleicons" :key="item">
+              <div class="thumbnail" :title="item">
+                <div class="caption text-center">
+                  <img height="32" width="32" :src="'https://unpkg.com/simple-icons@v7/icons/' + item + '.svg'" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="messages">...</div>
+          <div role="tabpanel" class="tab-pane" id="settings">...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://fastly.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="./../../store/index.js"></script>
+  <script>
+    window.onload = function () {
+      new Vue({
+        el: '#app',
+        data: {
+          icons: store.state.icons,
+          packages: getPackages(['jquery', 'Bootstrap', 'vue', 'font-awesome', 'simple-icon'])
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+{
+  "name": "",
+  "description": "",
+  "children": [
+    {
+      "id": "",
+      "name": "【ffmpeg】视频内嵌字幕",
+      "language": "bat"
+    },
+    {
+      "id": "",
+      "name": "【ffmpeg】视频内封字幕",
+      "language": "bat"
+    },
+    {
+      "id": "",
+      "name": "【jQuery】Select 默认选中",
+      "description": "",
+      "language": "javascript",
+      "value": "$(\".selector\").val(\"pxx\");"
+    },
+    {
+      "id": "",
+      "name": "【monaco-editor】初始化",
+      "description": "",
+      "language": "javascript",
+      "value": "const editor = monaco.editor.create(document.getElementById(id),{\n\tvalue:\"\",\n\tlanguage:\"javascript\",\n\ttabSize:2\n})"
+    },
+    {
+      "id": "",
+      "name": "【monaco-editor】只读",
+      "description": "",
+      "language": "javascript",
+      "value": "const editor = monaco.editor.create(document.getElementById(id),{\n\tvalue:\"\",\n\tlanguage:\"javascript\",\n\treadOnly:true\n})"
+    },
+    {
+      "id": "",
+      "name": "【monaco-editor】主题",
+      "description": "",
+      "language": "javascript",
+      "value": "const editor = monaco.editor.create(document.getElementById(id),{\n\tvalue:\"\",\n\tlanguage:\"javascript\",\n\treadOnly:true,\n\ttheme: \"vs-dark\",\n})"
+    },
+    {
+      "id": "",
+      "name": "【monaco-editor】随内容高度自适应",
+      "description": "",
+      "language": "javascript",
+      "value": "const editor=monaco.editor.create(document.getElementById(id),{\n\tvalue:\"\",\n\tlanguage:\"javascript\",\n\tautomaticLayout: true,\n}).onDidChangeModelContent(e=>{\n\tconst value = editor.getValue();\n\tdocument.getElementById(id).style.height = value.split(\"\\n\").length * 19 + \"px\";\n})"
+    },
+    {
+      "id": "",
+      "name": "【monaco-editor】关闭预览面板",
+      "description": "",
+      "language": "javascript",
+      "value": "const editor = monaco.editor.create(document.getElementById(id),{\n\tvalue:\"\",\n\tlanguage:\"javascript\",\n\tminimap:{\n\t\tenabled:false\n\t}\n})"
+    },
+    {
+      "id": "",
+      "name": "【monaco-editor】监听保存按键",
+      "description": "",
+      "language": "javascript",
+      "value": "const editor = monaco.editor.create(document.getElementById(id),{\n\tvalue:\"\",\n\tlanguage:\"javascript\",\n\ttabSize:2\n})\neditor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S, function () {\n\tconsole.log('SAVE pressed!')\n})"
+    }
+  ]
+}

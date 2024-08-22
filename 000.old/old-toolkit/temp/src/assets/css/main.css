@@ -1,4 +1,0 @@
-body > main > [id$="wrapper"],
-[id$="wrapper"] > [id^="jsoneditor"] {
-  min-height: calc(100vh - 121px);
-}
